@@ -13,14 +13,14 @@ html, body, #root {
     transform: translate(0, 0) rotate(0deg);
   }
   100% {
-    transform: translate(-40vw, 110vh) rotate(360deg);
+    transform: translate(var(--x-drift, -80vw), 60vh) rotate(360deg);
   }
 }
 
 .petal {
   position: absolute;
-  top: -5%;
   animation-name: petal-fall;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in;
   animation-iteration-count: infinite;
+  z-index: 50;
 }

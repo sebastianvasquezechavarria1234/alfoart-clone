@@ -7,9 +7,10 @@ import petal from './assets/petal.webp'
 const petals = Array.from({ length: 30 }, (_, i) => ({
   id: i,
   size: Math.floor(Math.random() * 11) + 10,
-  top: Math.random() * 100,
+  top: Math.floor(Math.random() * 40) + 10,
   duration: Math.floor(Math.random() * 5) + 6,
   delay: Math.random() * 8,
+  xDrift: Math.floor(Math.random() * 30) + 50,
 }))
 
 function App() {
@@ -30,10 +31,11 @@ function App() {
           style={{
             width: p.size,
             height: p.size,
-            top: '50%',
-            right: `${Math.random() * 20}%`,
+            top: `${p.top}%`,
+            right: '-3%',
             animationDuration: `${p.duration}s`,
             animationDelay: `${p.delay}s`,
+            ['--x-drift' as string]: `-${p.xDrift}vw`,
           }}
         />
       ))}
