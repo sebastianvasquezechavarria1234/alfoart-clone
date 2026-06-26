@@ -13,7 +13,7 @@ html, body, #root {
     transform: translate(0, 0) rotate(0deg);
   }
   100% {
-    transform: translate(var(--x-drift, -120vw), calc(30vh + 300px)) rotate(360deg);
+    transform: translate(var(--x-drift, -120vw), calc(30vh + 500px)) rotate(360deg);
   }
 }
 
