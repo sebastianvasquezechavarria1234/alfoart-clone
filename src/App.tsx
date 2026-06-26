@@ -35,8 +35,8 @@ function App() {
         <img
           src={bg1}
           alt="background-1"
-          className="w-full h-full object-cover blur-[4px] transition-transform duration-300 ease-out"
-          style={{ transform: `scale(1.1) translate(${mouse.x * 20}px, ${mouse.y * 20}px)` }}
+          className="w-full h-full object-cover blur-[2px] transition-transform duration-300 ease-out translate-y-[-20%]"
+          style={{ transform: `scale(1.1) translate(${-mouse.x * 20}px, ${mouse.y * 20}px)` }}
         />
       </div>
 
@@ -45,7 +45,7 @@ function App() {
           src={bg2}
           alt="background-2"
           className="w-full transition-transform duration-300 ease-out"
-          style={{ transform: `scale(1.2) translate(${mouse.x * 50}px, ${mouse.y * 30}px)` }}
+          style={{ transform: `scale(1.2) translate(${-mouse.x * 50}px, ${mouse.y * 30}px)` }}
         />
       </div>
 
@@ -69,12 +69,19 @@ function App() {
         />
       ))}
 
+      <div className="absolute w-[400px] bottom-0 left-1/2 -translate-x-1/2 w-[190%]">
+        <img
+          src={buildingInterior}
+          alt="building-interior"
+          className="w-full"
+        />
+      </div>
       <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 w-[190%]">
         <img
           src={frontScene}
           alt="front-scene"
-          className="w-full transition-transform duration-300 ease-out"
-          style={{ transform: `scale(1.3) translate(${mouse.x * 80}px, ${mouse.y * 40}px)` }}
+          className="w-[400px] absolute"
+          style={{ transform: `scale(1.3) translate(${-mouse.x * 80}px, ${mouse.y * 40}px)` }}
         />
       </div>
     </div>
