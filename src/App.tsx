@@ -35,7 +35,7 @@ function App() {
         <img
           src={bg1}
           alt="background-1"
-          className="w-full h-full object-cover transition-transform duration-300 ease-out"
+          className="w-full h-full object-cover blur-[4px] transition-transform duration-300 ease-out"
           style={{ transform: `scale(1.1) translate(${mouse.x * 20}px, ${mouse.y * 20}px)` }}
         />
       </div>
@@ -49,7 +49,7 @@ function App() {
         />
       </div>
 
-      <img src={cloud4} alt="cloud-4" className="absolute top-0 left-0 w-full z-60" />
+      <img src={cloud4} alt="cloud-4" className="absolute top-0 left-0 z-60 w-[400px]" />
 
       {petals.map((p) => (
         <img
