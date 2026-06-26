@@ -10,7 +10,7 @@ const petals = Array.from({ length: 30 }, (_, i) => ({
   top: Math.floor(Math.random() * 20) + 50,
   duration: Math.floor(Math.random() * 5) + 6,
   delay: Math.random() * 8,
-  xDrift: Math.floor(Math.random() * 40) + 80,
+  xDrift: Math.floor(Math.random() * 40) + 160,
 }))
 
 function App() {
