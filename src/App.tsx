@@ -1,3 +1,4 @@
+import { useState, type MouseEvent } from 'react'
 import bg1 from './assets/background-1.jpg'
 import bg2 from './assets/background-2.webp'
 import frontScene from './assets/front-scene.webp'
@@ -14,14 +15,35 @@ const petals = Array.from({ length: 60 }, (_, i) => ({
 }))
 
 function App() {
+  const [mouse, setMouse] = useState({ x: 0, y: 0 })
+
+  const handleMouseMove = (e: MouseEvent) => {
+    const { clientX, clientY } = e
+    const { innerWidth, innerHeight } = window
+    setMouse({
+      x: (clientX / innerWidth - 0.5) * 2,
+      y: (clientY / innerHeight - 0.5) * 2,
+    })
+  }
+
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      <img src={bg1} alt="background-1" className="absolute inset-0 w-full h-full object-cover" />
-      <img src={bg2} alt="background-2" className="absolute bottom-0 left-[50%] translate-x-[-50%] w-[190%] " />
-      {/* <img src={cloud1} alt="cloud-1" className="absolute top-0 left-0 w-full" />
-      <img src={cloud2} alt="cloud-2" className="absolute top-0 left-0 w-full" />
-      <img src={cloud3} alt="cloud-3" className="absolute top-0 left-0 w-full" /> */}
-      <img src={cloud4} alt="cloud-4" className="absolute top-0 left-0 w-full w-[30]" />
+    <div
+      className="relative w-full h-screen overflow-hidden"
+      onMouseMove={handleMouseMove}
+    >
+      <img
+        src={bg1}
+        alt="background-1"
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-out"
+        style={{ transform: `scale(1.1) translate(${mouse.x * 10}px, ${mouse.y * 10}px)` }}
+      />
+      <img
+        src={bg2}
+        alt="background-2"
+        className="absolute bottom-0 left-0 w-[190%] transition-transform duration-300 ease-out"
+        style={{ transform: `translateX(calc(-50% + ${mouse.x * 25}px)) translateY(${mouse.y * 15}px)` }}
+      />
+      <img src={cloud4} alt="cloud-4" className="absolute top-0 left-0 w-full" />
       {petals.map((p) => (
         <img
           key={p.id}
@@ -39,7 +61,12 @@ function App() {
           }}
         />
       ))}
-      <img src={frontScene} alt="front-scene" className="absolute bottom-0 left-[50%] translate-x-[-50%] w-[190%] " />
+      <img
+        src={frontScene}
+        alt="front-scene"
+        className="absolute bottom-0 left-[50%] translate-x-[-50%] w-[190%] transition-transform duration-300 ease-out"
+        style={{ transform: `translateX(-50%) translate(${mouse.x * 40}px, ${mouse.y * 20}px)` }}
+      />
     </div>
   )
 }
