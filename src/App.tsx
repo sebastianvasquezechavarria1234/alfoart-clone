@@ -31,19 +31,26 @@ function App() {
       className="relative w-full h-screen overflow-hidden"
       onMouseMove={handleMouseMove}
     >
-      <img
-        src={bg1}
-        alt="background-1"
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-out"
-        style={{ transform: `scale(1.1) translate(${mouse.x * 10}px, ${mouse.y * 10}px)` }}
-      />
-      <img
-        src={bg2}
-        alt="background-2"
-        className="absolute bottom-0 left-0 ml-[-45vw] w-[190%] transition-transform duration-300 ease-out"
-        style={{ transform: `translate(${mouse.x * 25}px, ${mouse.y * 15}px)` }}
-      />
+      <div className="absolute inset-0 overflow-hidden">
+        <img
+          src={bg1}
+          alt="background-1"
+          className="w-full h-full object-cover transition-transform duration-300 ease-out"
+          style={{ transform: `scale(1.1) translate(${mouse.x * 10}px, ${mouse.y * 10}px)` }}
+        />
+      </div>
+
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[190%] overflow-hidden">
+        <img
+          src={bg2}
+          alt="background-2"
+          className="w-full transition-transform duration-300 ease-out"
+          style={{ transform: `translate(${mouse.x * 25}px, ${mouse.y * 15}px)` }}
+        />
+      </div>
+
       <img src={cloud4} alt="cloud-4" className="absolute top-0 left-0 w-full" />
+
       {petals.map((p) => (
         <img
           key={p.id}
@@ -61,12 +68,15 @@ function App() {
           }}
         />
       ))}
-      <img
-        src={frontScene}
-        alt="front-scene"
-        className="absolute bottom-0 left-0 ml-[-45vw] w-[190%] transition-transform duration-300 ease-out"
-        style={{ transform: `translate(${mouse.x * 40}px, ${mouse.y * 20}px)` }}
-      />
+
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[190%] overflow-hidden">
+        <img
+          src={frontScene}
+          alt="front-scene"
+          className="w-full transition-transform duration-300 ease-out"
+          style={{ transform: `translate(${mouse.x * 40}px, ${mouse.y * 20}px)` }}
+        />
+      </div>
     </div>
   )
 }
