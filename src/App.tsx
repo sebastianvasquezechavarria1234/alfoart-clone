@@ -8,7 +8,7 @@ const petals = Array.from({ length: 60 }, (_, i) => ({
   id: i,
   size: Math.floor(Math.random() * 6) + 2,
   top: Math.floor(Math.random() * 20) + 50,
-  duration: Math.floor(Math.random() * 5) + 15,
+  duration: Math.floor(Math.random() * 5) + 20,
   delay: Math.random() * 8,
   xDrift: Math.floor(Math.random() * 40) + 200,
 }))
