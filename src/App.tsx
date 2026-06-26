@@ -36,7 +36,7 @@ function App() {
           src={bg1}
           alt="background-1"
           className="w-full h-full object-cover transition-transform duration-300 ease-out"
-          style={{ transform: `translate(${mouse.x * 10}px, ${mouse.y * 10}px)` }}
+          style={{ transform: `scale(1.1) translate(${mouse.x * 20}px, ${mouse.y * 20}px)` }}
         />
       </div>
 
@@ -45,7 +45,7 @@ function App() {
           src={bg2}
           alt="background-2"
           className="w-full transition-transform duration-300 ease-out"
-          style={{ transform: `translate(${mouse.x * 25}px, ${mouse.y * 15}px)` }}
+          style={{ transform: `scale(1.2) translate(${mouse.x * 50}px, ${mouse.y * 30}px)` }}
         />
       </div>
 
@@ -74,7 +74,7 @@ function App() {
           src={frontScene}
           alt="front-scene"
           className="w-full transition-transform duration-300 ease-out"
-          style={{ transform: `translate(${mouse.x * 40}px, ${mouse.y * 20}px)` }}
+          style={{ transform: `scale(1.3) translate(${mouse.x * 80}px, ${mouse.y * 40}px)` }}
         />
       </div>
     </div>
