@@ -6,11 +6,11 @@ import petal from './assets/petal.webp'
 
 const petals = Array.from({ length: 30 }, (_, i) => ({
   id: i,
-  size: Math.floor(Math.random() * 11) + 10,
+  size: Math.floor(Math.random() * 7) + 4,
   top: Math.floor(Math.random() * 40) + 10,
   duration: Math.floor(Math.random() * 5) + 6,
   delay: Math.random() * 8,
-  xDrift: Math.floor(Math.random() * 30) + 50,
+  xDrift: Math.floor(Math.random() * 40) + 80,
 }))
 
 function App() {
