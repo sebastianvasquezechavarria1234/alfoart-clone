@@ -10,12 +10,10 @@ html, body, #root {
 
 @keyframes petal-fall {
   0% {
-    transform: translate(0, -10%) rotate(0deg);
-    opacity: 1;
+    transform: translate(0, 0) rotate(0deg);
   }
   100% {
-    transform: translate(-110vw, 20%) rotate(360deg);
-    opacity: 0;
+    transform: translate(-40vw, 110vh) rotate(360deg);
   }
 }
 

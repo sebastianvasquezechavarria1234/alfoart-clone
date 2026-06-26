@@ -1,9 +1,6 @@
 import bg1 from './assets/background-1.jpg'
 import bg2 from './assets/background-2.webp'
 import frontScene from './assets/front-scene.webp'
-import cloud1 from './assets/cloud-1.webp'
-import cloud2 from './assets/cloud-2.webp'
-import cloud3 from './assets/cloud-3.webp'
 import cloud4 from './assets/cloud-4.webp'
 import petal from './assets/petal.webp'
 
@@ -20,10 +17,10 @@ function App() {
     <div className="relative w-full h-screen overflow-hidden">
       <img src={bg1} alt="background-1" className="absolute inset-0 w-full h-full object-cover" />
       <img src={bg2} alt="background-2" className="absolute bottom-0 left-[50%] translate-x-[-50%] w-[190%] " />
-      <img src={cloud1} alt="cloud-1" className="absolute top-0 left-0 w-full" />
+      {/* <img src={cloud1} alt="cloud-1" className="absolute top-0 left-0 w-full" />
       <img src={cloud2} alt="cloud-2" className="absolute top-0 left-0 w-full" />
-      <img src={cloud3} alt="cloud-3" className="absolute top-0 left-0 w-full" />
-      <img src={cloud4} alt="cloud-4" className="absolute top-0 left-0 w-full" />
+      <img src={cloud3} alt="cloud-3" className="absolute top-0 left-0 w-full" /> */}
+      <img src={cloud4} alt="cloud-4" className="absolute top-0 left-0 w-full w-[30]" />
       {petals.map((p) => (
         <img
           key={p.id}
@@ -33,8 +30,8 @@ function App() {
           style={{
             width: p.size,
             height: p.size,
-            top: `${p.top}%`,
-            right: '-3%',
+            top: '50%',
+            right: `${Math.random() * 20}%`,
             animationDuration: `${p.duration}s`,
             animationDelay: `${p.delay}s`,
           }}
