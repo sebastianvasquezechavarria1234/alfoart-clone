@@ -4,6 +4,7 @@ import bg2 from './assets/background-2.webp'
 import frontScene from './assets/front-scene.webp'
 import cloud4 from './assets/cloud-4.webp'
 import petal from './assets/petal.webp'
+import buildingInterior from './assets/building-interior.jpg'
 
 const petals = Array.from({ length: 60 }, (_, i) => ({
   id: i,
@@ -69,20 +70,23 @@ function App() {
         />
       ))}
 
-      <div className="absolute w-[400px] bottom-0 left-1/2 -translate-x-1/2 w-[190%]">
-        <img
-          src={buildingInterior}
-          alt="building-interior"
-          className="w-full"
-        />
-      </div>
+
       <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 w-[190%]">
-        <img
-          src={frontScene}
-          alt="front-scene"
-          className="w-[400px] absolute"
-          style={{ transform: `scale(1.3) translate(${-mouse.x * 80}px, ${mouse.y * 40}px)` }}
-        />
+        <div
+          className="transition-transform duration-300 ease-out"
+          style={{ transform: `translate(${-mouse.x * 80}px, ${mouse.y * 40}px)` }}
+        >
+          <img
+            src={frontScene}
+            alt="front-scene"
+            className="w-full"
+          />
+          <img
+            src={buildingInterior}
+            alt="front-scene"
+            className="w-[400px] absolute z-50 bottom-0 left-1/2 -translate-x-1/2"
+          />
+        </div>
       </div>
     </div>
   )
