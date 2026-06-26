@@ -36,11 +36,11 @@ function App() {
           src={bg1}
           alt="background-1"
           className="w-full h-full object-cover transition-transform duration-300 ease-out"
-          style={{ transform: `scale(1.1) translate(${mouse.x * 10}px, ${mouse.y * 10}px)` }}
+          style={{ transform: `translate(${mouse.x * 10}px, ${mouse.y * 10}px)` }}
         />
       </div>
 
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[190%] overflow-hidden">
+      <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 w-[190%] overflow-hidden">
         <img
           src={bg2}
           alt="background-2"
@@ -69,7 +69,7 @@ function App() {
         />
       ))}
 
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[190%] overflow-hidden">
+      <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 w-[190%] overflow-hidden">
         <img
           src={frontScene}
           alt="front-scene"
