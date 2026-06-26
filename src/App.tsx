@@ -40,7 +40,7 @@ function App() {
         />
       </div>
 
-      <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 w-[190%] overflow-hidden">
+      <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 w-[190%]">
         <img
           src={bg2}
           alt="background-2"
@@ -49,7 +49,7 @@ function App() {
         />
       </div>
 
-      <img src={cloud4} alt="cloud-4" className="absolute top-0 left-0 w-full" />
+      <img src={cloud4} alt="cloud-4" className="absolute top-0 left-0 w-full z-60" />
 
       {petals.map((p) => (
         <img
@@ -69,7 +69,7 @@ function App() {
         />
       ))}
 
-      <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 w-[190%] overflow-hidden">
+      <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 w-[190%]">
         <img
           src={frontScene}
           alt="front-scene"
