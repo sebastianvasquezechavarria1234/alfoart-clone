@@ -40,8 +40,8 @@ function App() {
       <img
         src={bg2}
         alt="background-2"
-        className="absolute bottom-0 left-0 w-[190%] transition-transform duration-300 ease-out"
-        style={{ transform: `translateX(calc(-45% + ${mouse.x * 25}px)) translateY(${mouse.y * 15}px)` }}
+        className="absolute bottom-0 left-0 ml-[-45vw] w-[190%] transition-transform duration-300 ease-out"
+        style={{ transform: `translate(${mouse.x * 25}px, ${mouse.y * 15}px)` }}
       />
       <img src={cloud4} alt="cloud-4" className="absolute top-0 left-0 w-full" />
       {petals.map((p) => (
@@ -64,8 +64,8 @@ function App() {
       <img
         src={frontScene}
         alt="front-scene"
-        className="absolute bottom-0 left-0 w-[190%] transition-transform duration-300 ease-out"
-        style={{ transform: `translateX(calc(-45% + ${mouse.x * 40}px)) translateY(${mouse.y * 20}px)` }}
+        className="absolute bottom-0 left-0 ml-[-45vw] w-[190%] transition-transform duration-300 ease-out"
+        style={{ transform: `translate(${mouse.x * 40}px, ${mouse.y * 20}px)` }}
       />
     </div>
   )
