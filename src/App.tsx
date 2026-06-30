@@ -174,7 +174,7 @@ function App() {
         </div>
       </div>
 
-      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-4 z-50">
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-4 z-50 font-['Petit_Formal_Script']">
         <a href="#" className="px-4 py-2 bg-white/10 backdrop-blur-sm text-white text-sm rounded-full border border-white/20 hover:bg-white/20 transition-colors">
           Creado por Sebastian Vasquez
         </a>
