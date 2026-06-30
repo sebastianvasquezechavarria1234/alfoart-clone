@@ -169,8 +169,8 @@ function App() {
           className="w-full h-full transition-transform duration-300 ease-out"
           style={{ transform: `translate(${-mouse.x * 60}px, ${mouse.y * 60}px)` }}
         >
-          <img src={fogContent2} alt="fog-content2" className="absolute bottom-[-10%] w-full fog-slide-reverse" />
-          <img src={fog5} alt="fog-5" className="absolute bottom-0 w-full fog-slide" />
+          <img src={fogContent2} alt="fog-content2" className="absolute bottom-[-10%] w-full fog-slide-reverse opacity-50" />
+          <img src={fog5} alt="fog-5" className="absolute bottom-0 w-full fog-slide opacity-50" />
         </div>
       </div>
     </div>
