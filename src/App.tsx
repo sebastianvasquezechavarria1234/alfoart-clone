@@ -150,7 +150,7 @@ function App() {
       </div>
 
       <div className="relative w-full h-screen overflow-hidden">
-        <img src={fogContent2} alt="fog-content2" className="absolute bottom-0 w-full fog-slide" style={{ animationDirection: 'reverse' }} />
+        <img src={fogContent2} alt="fog-content2" className="absolute bottom-[-10%] w-full fog-slide-reverse" />
       </div>
 
       <div className="relative w-full h-screen overflow-hidden">
