@@ -107,4 +107,4 @@ alfoart-clone/
 
 ---
 
-<p align="center">❤️ Made by <a href="https://sebas-dev.vercel.app/">Sebastian V</a></p>
+<p align="center">❤️ Made with love by <a href="https://sebas-dev.vercel.app/">Sebastian V</a></p>
