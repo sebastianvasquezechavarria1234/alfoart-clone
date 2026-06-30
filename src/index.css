@@ -13,17 +13,44 @@ html, body, #root {
 
 @keyframes petal-fall {
   0% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  10% {
+    transform: translate(calc(var(--x-drift, -120vw) * 0.08), 4vh) rotate(30deg) scale(0.97);
+  }
+  20% {
+    transform: translate(calc(var(--x-drift, -120vw) * 0.16), 9vh) rotate(55deg) scale(1.03);
+  }
+  30% {
+    transform: translate(calc(var(--x-drift, -120vw) * 0.26), 14vh) rotate(80deg) scale(0.96);
+  }
+  40% {
+    transform: translate(calc(var(--x-drift, -120vw) * 0.36), 19vh) rotate(120deg) scale(1.02);
+  }
+  50% {
+    transform: translate(calc(var(--x-drift, -120vw) * 0.48), 24vh) rotate(160deg) scale(0.97);
+  }
+  60% {
+    transform: translate(calc(var(--x-drift, -120vw) * 0.6), 29vh) rotate(200deg) scale(1.03);
+  }
+  70% {
+    transform: translate(calc(var(--x-drift, -120vw) * 0.72), 34vh) rotate(240deg) scale(0.96);
+  }
+  80% {
+    transform: translate(calc(var(--x-drift, -120vw) * 0.84), 39vh) rotate(280deg) scale(1.02);
+  }
+  90% {
+    transform: translate(calc(var(--x-drift, -120vw) * 0.94), 44vh) rotate(320deg) scale(0.97);
   }
   100% {
-    transform: translate(var(--x-drift, -120vw), calc(30vh + 500px)) rotate(360deg);
+    transform: translate(var(--x-drift, -120vw), calc(30vh + 500px)) rotate(360deg) scale(1);
   }
 }
 
 .petal {
   position: absolute;
   animation-name: petal-fall;
-  animation-timing-function: ease-in;
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
   z-index: 50;
 }
