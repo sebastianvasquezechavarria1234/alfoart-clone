@@ -73,8 +73,8 @@ html, body, #root {
 }
 
 @keyframes unblur {
-  0% { filter: blur(20px); opacity: 0; }
-  100% { filter: blur(0); opacity: 1; }
+  0% { filter: blur(20px); transform: scale(1.05); opacity: 0.5; }
+  100% { filter: blur(0); transform: scale(1); opacity: 1; }
 }
 
 .animate-unblur {

@@ -27,7 +27,6 @@ function App() {
   const [mouse, setMouse] = useState({ x: 0, y: 0 })
   const [isSmall, setIsSmall] = useState(window.innerWidth <= 800)
   const [loading, setLoading] = useState(true)
-  const [loaded, setLoaded] = useState(false)
   const audioRef = useRef<HTMLAudioElement>(null)
 
   useEffect(() => {
@@ -38,10 +37,7 @@ function App() {
       const img = new Image()
       img.onload = img.onerror = () => {
         count++
-        if (count >= images.length) {
-          setLoading(false)
-          setTimeout(() => setLoaded(true), 500)
-        }
+        if (count >= images.length) setLoading(false)
       }
       img.src = src
     })
@@ -107,13 +103,13 @@ function App() {
 
   return (
     <>
-      {!loaded && (
-        <div className={`fixed inset-0 z-[100] bg-black flex items-center justify-center transition-all duration-1000 ${loading ? 'blur-0 opacity-100' : 'blur-xl opacity-0'}`}>
+      {loading && (
+        <div className="fixed inset-0 z-[100] bg-black flex items-center justify-center animate-pulse-opacity">
           <span className="font-['Imperial_Script'] text-white text-4xl animate-pulse">Cargando...</span>
         </div>
       )}
     <div
-      className={`relative w-full h-screen overflow-hidden ${loaded ? 'animate-unblur' : 'blur-xl'}`}
+      className={`relative w-full h-screen overflow-hidden ${loading ? 'blur-xl scale-105' : 'animate-unblur'}`}
       onMouseMove={handleMouseMove}
     >
       <audio ref={audioRef} src={audioSrc} />
