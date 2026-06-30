@@ -101,9 +101,9 @@ function App() {
       </div>
 
       <img src={cloud4} alt="cloud-4" className="absolute top-[-5%] left-[50%] z-60 w-[25%]" />
-      <img src={cloud3} alt="cloud-3" className="absolute top-[-140px] right-[-2%] z-60 w-[21%]" />
+      <img src={cloud3} alt="cloud-3" className="absolute top-[-15%] right-[-2%] z-60 w-[21%]" />
       <img src={cloud1} alt="cloud-1" className="absolute top-[10%] left-[25%] z-60 w-[22%]" />
-      <img src={cloud2} alt="cloud-2" className="absolute top-[-120px] left-[-100px] z-60 w-[20%]" />
+      <img src={cloud2} alt="cloud-2" className="absolute top-[-10%] left-[-100px] z-60 w-[20%]" />
 
       {petals.map((p) => (
         <img
@@ -126,7 +126,7 @@ function App() {
 
       <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 w-[190%]">
         <div
-          className="transition-transform duration-300 ease-out bg-red-600"
+          className="transition-transform duration-300 ease-out "
           style={{ transform: `translate(${-mouse.x * 80}px, ${mouse.y * 40}px)` }}
         >
           <img
