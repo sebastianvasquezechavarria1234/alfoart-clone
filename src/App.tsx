@@ -1,4 +1,4 @@
-import { useState, type MouseEvent } from 'react'
+import { useState, useRef, useEffect, type MouseEvent } from 'react'
 import bg1 from './assets/background-1.jpg'
 import bg2 from './assets/background-2.webp'
 import frontScene from './assets/front-scene.webp'
@@ -6,6 +6,7 @@ import cloud4 from './assets/cloud-4.webp'
 import petal from './assets/petal.webp'
 import buildingInterior from './assets/building-interior.jpg'
 import dancingPeople from './assets/dancing-people.webp'
+import audioSrc from './assets/audio.mp3'
 
 const petals = Array.from({ length: 60 }, (_, i) => ({
   id: i,
@@ -18,6 +19,50 @@ const petals = Array.from({ length: 60 }, (_, i) => ({
 
 function App() {
   const [mouse, setMouse] = useState({ x: 0, y: 0 })
+  const audioRef = useRef<HTMLAudioElement>(null)
+
+  useEffect(() => {
+    const audio = audioRef.current
+    if (!audio) return
+
+    const fadeDuration = 2000
+    const steps = 20
+    const interval = fadeDuration / steps
+
+    const fadeOut = (cb?: () => void) => {
+      let vol = audio.volume
+      const step = vol / steps
+      const id = setInterval(() => {
+        vol = Math.max(0, vol - step)
+        audio.volume = vol
+        if (vol <= 0) {
+          clearInterval(id)
+          cb?.()
+        }
+      }, interval)
+    }
+
+    const fadeIn = (target = 1) => {
+      audio.volume = 0
+      audio.play()
+      let vol = 0
+      const step = target / steps
+      const id = setInterval(() => {
+        vol = Math.min(target, vol + step)
+        audio.volume = vol
+        if (vol >= target) clearInterval(id)
+      }, interval)
+    }
+
+    audio.addEventListener('ended', () => {
+      fadeOut(() => {
+        audio.currentTime = 0
+        fadeIn()
+      })
+    })
+
+    fadeIn()
+  }, [])
 
   const handleMouseMove = (e: MouseEvent) => {
     const { clientX, clientY } = e
@@ -33,6 +78,7 @@ function App() {
       className="relative w-full h-screen overflow-hidden"
       onMouseMove={handleMouseMove}
     >
+      <audio ref={audioRef} src={audioSrc} />
       <div className="absolute inset-0 overflow-hidden">
         <img
           src={bg1}
