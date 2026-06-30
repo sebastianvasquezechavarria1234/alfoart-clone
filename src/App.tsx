@@ -99,13 +99,13 @@ function App() {
           src={bg2}
           alt="background-2"
           className="w-full transition-transform duration-300 ease-out"
-          style={{ transform: `scale(1.2) translate(${-mouse.x * 12}px, ${mouse.y * 8}px)` }}
+          style={{ transform: `scale(1.2) translate(${-mouse.x * 30}px, ${mouse.y * 24}px)` }}
         />
       </div>
 
       <div
         className="transition-transform duration-300 ease-out"
-        style={{ transform: `translate(${-mouse.x * 20}px, ${mouse.y * 15}px)` }}
+        style={{ transform: `translate(${-mouse.x * 3}px, ${mouse.y * 2}px)` }}
       >
         <img src={moon} alt="moon" className="absolute top-[-22%] left-[-30%] w-full " />
       </div>
@@ -137,7 +137,7 @@ function App() {
       <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 w-[190%] ">
         <div
           className="transition-transform duration-300 ease-out "
-          style={{ transform: `translate(${-mouse.x * 80}px, ${mouse.y * 40}px)` }}
+          style={{ transform: `translate(${-mouse.x * 80}px, ${mouse.y * 45}px)` }}
         >
           <img
             src={frontScene}
@@ -160,7 +160,7 @@ function App() {
       <div className="relative w-full h-screen overflow-hidden">
         <div
           className="w-full h-full transition-transform duration-300 ease-out"
-          style={{ transform: `translate(${-mouse.x * 30}px, ${mouse.y * 20}px)` }}
+          style={{ transform: `translate(${-mouse.x * 40}px, ${mouse.y * 25}px)` }}
         >
           <img src={fogContent2} alt="fog-content2" className="absolute bottom-[-10%] w-full fog-slide-reverse" />
           <img src={fog5} alt="fog-5" className="absolute bottom-0 w-full fog-slide" />
