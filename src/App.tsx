@@ -81,6 +81,8 @@ function App() {
     return () => audio.removeEventListener('ended', handleEnded)
   }, [musicOn])
 
+  const toggleMusic = () => setMusicOn(prev => !prev)
+
   const handleMouseMove = (e: MouseEvent) => {
     const { clientX, clientY } = e
     const { innerWidth, innerHeight } = window
@@ -195,10 +197,10 @@ function App() {
 
       <div className="fixed bottom-4 left-0 right-0 flex justify-between items-center px-6 z-50 font-['Imperial_Script'] text-2xl max-[800px]:text-base max-[800px]:whitespace-nowrap">
         <div className="flex gap-4">
-          <a href="https://sebas-dev.vercel.app/" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full border border-white/20 hover:bg-white/20 transition-colors">
+          <a href="https://sebas-dev.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-white underline hover:text-white/70 transition-colors">
             Creado por Sebastian Vasquez
           </a>
-          <a href="https://github.com/sebastianvasquezechavarria1234/alfoart-clone" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full border border-white/20 hover:bg-white/20 transition-colors">
+          <a href="https://github.com/sebastianvasquezechavarria1234/alfoart-clone" target="_blank" rel="noopener noreferrer" className="text-white underline hover:text-white/70 transition-colors">
             Codigo fuente
           </a>
         </div>
