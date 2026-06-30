@@ -90,7 +90,7 @@ function App() {
           src={bg1}
           alt="background-1"
           className="w-full h-full object-cover blur-[2px] transition-transform duration-300 ease-out translate-y-[-20%]"
-          style={{ transform: `scale(1.1) translate(${-mouse.x * 8}px, ${mouse.y * 5}px)` }}
+          style={{ transform: `scale(1.1) translate(${-mouse.x * 18}px, ${mouse.y * 15}px)` }}
         />
       </div>
 
@@ -105,7 +105,7 @@ function App() {
 
       <div
         className="transition-transform duration-300 ease-out absolute inset-0"
-        style={{ transform: `translate(${-mouse.x * 3}px, ${mouse.y * 2}px)` }}
+        style={{ transform: `translate(${-mouse.x * 13}px, ${mouse.y * 12}px)` }}
       >
         <img src={moon} alt="moon" className="absolute top-[-20%] left-[-30%] w-full " />
       </div>
