@@ -126,7 +126,7 @@ function App() {
       ))}
 
 
-      <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 w-[190%]">
+      <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 w-[190%] ">
         <div
           className="transition-transform duration-300 ease-out "
           style={{ transform: `translate(${-mouse.x * 80}px, ${mouse.y * 40}px)` }}
@@ -149,12 +149,12 @@ function App() {
         </div>
       </div>
 
-      <div className="relative w-full h-screen">
-        <img src={fogContent2} alt="fog-content2" className="absolute bottom-0 w-full" />
+      <div className="relative w-full h-screen overflow-hidden">
+        <img src={fogContent2} alt="fog-content2" className="absolute bottom-0 w-full scale-[1.4]" />
       </div>
 
-      <div className="relative w-full h-screen">
-        <img src={fog5} alt="fog-5" className="absolute bottom-0 w-full" />
+      <div className="relative w-full h-screen overflow-hidden">
+        <img src={fog5} alt="fog-5" className="absolute bottom-0 w-full scale-[1.4]" />
       </div>
     </div>
   )
