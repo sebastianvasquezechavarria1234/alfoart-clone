@@ -1,58 +1,76 @@
-# Alfoart Clone
+<h1 align="center">Alfoart Clone</h1>
 
-Una réplica interactiva de la sección **"Derion Zini"** de [Alfoart.com](https://alfoart.com/derionzini-en/), construida con React, TypeScript y Tailwind CSS.
+<p align="center">
+  An interactive replica of the <strong>"Derion Zini"</strong> section from <a href="https://alfoart.com/derionzini-en/">Alfoart.com</a>, built with React, TypeScript, and Tailwind CSS.
+</p>
 
-## Inspiración
+<p align="center">
+  This project was created as a personal practice exercise to improve skills in UX/UI animations, parallax effects, and immersive web experiences.
+</p>
 
-Este proyecto fue inspirado y creado a partir del diseño original de:
+---
 
-**[https://alfoart.com/derionzini-en/](https://alfoart.com/derionzini-en/)**
+## About
 
-Todos los créditos del diseño visual original pertenecen a Alfoart.
+This clone recreates the visual experience of the original Alfoart page, focusing on smooth animations, depth through parallax layers, and an atmospheric feel. The goal was to practice and refine front-end techniques such as:
 
-## Características
+- Multi-layered parallax with mouse tracking
+- CSS keyframe animations for natural movement
+- Audio integration with fade transitions
+- Loading screen with blur entrance effects
+- Responsive design for different screen sizes
 
-- **Efecto Parallax** con seguimiento del cursor del mouse en múltiples capas de profundidad
-- **Animaciones CSS** personalizadas: nubes flotantes, pétalos cayendo, niebla deslizante, personas bailando
-- **Audio con loop** y fade in/fade out infinito al cargar la página
-- **Pantalla de carga** con efecto blur de entrada
-- **Diseño responsive** optimizado para pantallas ≤800px
-- **Favicon** personalizado con emoji de estrellas
+## Inspiration
 
-## Tecnologías
+The original design that inspired this project:
 
-| Tecnología | Versión |
+**[alfoart.com/derionzini-en/](https://alfoart.com/derionzini-en/)**
+
+All original visual design credits belong to **Alfoart**.
+
+## Features
+
+- **Parallax Effect** with mouse cursor tracking across multiple depth layers
+- **Custom CSS Animations**: floating clouds, falling petals, sliding fog, dancing figures
+- **Infinite Audio Loop** with fade in/fade out transitions
+- **Loading Screen** with blur entrance animation
+- **Responsive Design** optimized for screens ≤800px
+- **Custom Favicon** with a sparkle emoji
+
+## Technologies
+
+| Technology | Version |
 |------------|---------|
 | React | 19.1.0 |
 | TypeScript | 5.8.3 |
 | Tailwind CSS | 4.1.8 |
 | Vite | 6.3.5 |
 
-## Instalación
+## Getting Started
 
 ```bash
-# Clonar el repositorio
+# Clone the repository
 git clone https://github.com/sebastianvasquezechavarria1234/alfoart-clone.git
 
-# Entrar al directorio
+# Navigate to the project directory
 cd alfoart-clone
 
-# Instalar dependencias
+# Install dependencies
 npm install
 
-# Ejecutar en desarrollo
+# Start the development server
 npm run dev
 ```
 
 ## Scripts
 
-| Comando | Descripción |
+| Command | Description |
 |---------|-------------|
-| `npm run dev` | Inicia el servidor de desarrollo |
-| `npm run build` | Genera el build de producción |
-| `npm run preview` | Vista previa del build |
+| `npm run dev` | Starts the development server |
+| `npm run build` | Generates the production build |
+| `npm run preview` | Preview the production build |
 
-## Estructura del Proyecto
+## Project Structure
 
 ```
 alfoart-clone/
@@ -82,8 +100,11 @@ alfoart-clone/
 └── vite.config.ts
 ```
 
-## Autor
+## Credits
 
-**Sebastian Vasquez** — [Portfolio](https://sebas-dev.vercel.app/)
+- **Original Design**: [Alfoart](https://alfoart.com/derionzini-en/)
+- **Music**: [@genieonthestrings on TikTok](https://www.tiktok.com/@genieonthestrings)
 
-Código fuente: [GitHub](https://github.com/sebastianvasquezechavarria1234/alfoart-clone)
+---
+
+<p align="center">Made with love by <a href="https://sebas-dev.vercel.app/">Sebastian V</a></p>
