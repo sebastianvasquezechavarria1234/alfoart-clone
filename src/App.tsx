@@ -100,8 +100,8 @@ function App() {
         />
       </div>
 
-      <img src={cloud4} alt="cloud-4" className="absolute top-[-5%] left-[50%] z-60 w-[25%]" />
-      <img src={cloud3} alt="cloud-3" className="absolute top-[-15%] right-[-2%] z-60 w-[21%]" />
+      <img src={cloud4} alt="cloud-4" className="absolute top-[-5%] left-[50%] z-60 w-[25%] cloud-float" style={{ animationDelay: '-3s' }} />
+      <img src={cloud3} alt="cloud-3" className="absolute top-[-15%] right-[-2%] z-60 w-[21%] cloud-float" />
       <img src={cloud1} alt="cloud-1" className="absolute top-[10%] left-[25%] z-60 w-[22%]" />
       <img src={cloud2} alt="cloud-2" className="absolute top-[-10%] left-[-100px] z-60 w-[20%]" />
 

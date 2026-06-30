@@ -45,3 +45,12 @@ html, body, #root {
 .dancing {
   animation: danceWave 10s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
+
+@keyframes cloudFloat {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(80px, 40px, 0); }
+}
+
+.cloud-float {
+  animation: cloudFloat 10s 0.1s infinite alternate cubic-bezier(0.4, 0.05, 0.5, 0.9);
+}
