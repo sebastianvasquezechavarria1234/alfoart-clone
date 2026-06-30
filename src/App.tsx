@@ -204,7 +204,7 @@ function App() {
             Codigo fuente
           </a>
         </div>
-        <button onClick={toggleMusic} className="px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full border border-white/20 hover:bg-white/20 transition-colors cursor-pointer">
+        <button onClick={toggleMusic} className="px-5 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full border border-white/40 hover:bg-white/30 transition-all cursor-pointer animate-pulse-glow">
           {musicOn ? 'Pausar musica' : 'Activar musica'}
         </button>
       </div>
