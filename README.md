@@ -1,12 +1,12 @@
 <h1 align="center">Alfoart Clone</h1>
 
 <p align="center">
-  An interactive replica of the <strong>"Derion Zini"</strong> section from <a href="https://alfoart.com/derionzini-en/">Alfoart.com</a>, built with React, TypeScript, and Tailwind CSS.
+  <img src="src/assets/preview.jpg" alt="Preview" width="100%" />
 </p>
 
-<p align="center">
-  This project was created as a personal practice exercise to improve skills in UX/UI animations, parallax effects, and immersive web experiences.
-</p>
+An interactive replica of the **"Derion Zini"** section from [Alfoart.com](https://alfoart.com/derionzini-en/), built with React, TypeScript, and Tailwind CSS.
+
+This project was created as a personal practice exercise to improve skills in UX/UI animations, parallax effects, and immersive web experiences.
 
 ---
 
@@ -107,4 +107,4 @@ alfoart-clone/
 
 ---
 
-<p align="center">Made with love by <a href="https://sebas-dev.vercel.app/">Sebastian V</a></p>
+<p align="center">❤️ Made by <a href="https://sebas-dev.vercel.app/">Sebastian V</a></p>
