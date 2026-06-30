@@ -90,7 +90,7 @@ function App() {
           src={bg1}
           alt="background-1"
           className="w-full h-full object-cover blur-[2px] transition-transform duration-300 ease-out translate-y-[-20%]"
-          style={{ transform: `scale(1.1) translate(${-mouse.x * 20}px, ${mouse.y * 20}px)` }}
+          style={{ transform: `scale(1.1) translate(${-mouse.x * 8}px, ${mouse.y * 5}px)` }}
         />
       </div>
 
@@ -99,11 +99,16 @@ function App() {
           src={bg2}
           alt="background-2"
           className="w-full transition-transform duration-300 ease-out"
-          style={{ transform: `scale(1.2) translate(${-mouse.x * 50}px, ${mouse.y * 30}px)` }}
+          style={{ transform: `scale(1.2) translate(${-mouse.x * 12}px, ${mouse.y * 8}px)` }}
         />
       </div>
 
-      <img src={moon} alt="moon" className="absolute top-[-22%] left-[-30%] w-full " />
+      <div
+        className="transition-transform duration-300 ease-out"
+        style={{ transform: `translate(${-mouse.x * 20}px, ${mouse.y * 15}px)` }}
+      >
+        <img src={moon} alt="moon" className="absolute top-[-22%] left-[-30%] w-full " />
+      </div>
 
       <img src={cloud4} alt="cloud-4" className="absolute top-[-6%] left-[50%] z-60 w-[23%] cloud-float" style={{ animationDelay: '-3s' }} />
       <img src={cloud3} alt="cloud-3" className="absolute top-[-15%] right-[-2%] z-60 w-[19%] cloud-float" />
