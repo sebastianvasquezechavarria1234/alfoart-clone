@@ -105,9 +105,9 @@ function App() {
 
       <img src={moon} alt="moon" className="absolute top-[-22%] left-[-30%] w-full " />
 
-      <img src={cloud4} alt="cloud-4" className="absolute top-[-5%] left-[50%] z-60 w-[23%] cloud-float" style={{ animationDelay: '-3s' }} />
+      <img src={cloud4} alt="cloud-4" className="absolute top-[-6%] left-[50%] z-60 w-[23%] cloud-float" style={{ animationDelay: '-3s' }} />
       <img src={cloud3} alt="cloud-3" className="absolute top-[-15%] right-[-2%] z-60 w-[19%] cloud-float" />
-      <img src={cloud1} alt="cloud-1" className="absolute top-[8%] left-[25%] z-60 w-[20%] cloud-float" style={{ animationDelay: '-3s' }} />
+      <img src={cloud1} alt="cloud-1" className="absolute top-[6%] left-[25%] z-60 w-[20%] cloud-float" style={{ animationDelay: '-3s' }} />
       <img src={cloud2} alt="cloud-2" className="absolute top-[-10%] left-[-100px] z-60 w-[18%] cloud-float" />
 
       {petals.map((p) => (
@@ -153,11 +153,21 @@ function App() {
       </div>
 
       <div className="relative w-full h-screen overflow-hidden">
-        <img src={fogContent2} alt="fog-content2" className="absolute bottom-[-10%] w-full fog-slide-reverse" />
+        <div
+          className="transition-transform duration-300 ease-out"
+          style={{ transform: `translate(${-mouse.x * 30}px, ${mouse.y * 20}px)` }}
+        >
+          <img src={fogContent2} alt="fog-content2" className="absolute bottom-[-10%] w-full fog-slide-reverse" />
+        </div>
       </div>
 
       <div className="relative w-full h-screen overflow-hidden">
-        <img src={fog5} alt="fog-5" className="absolute bottom-0 w-full fog-slide" />
+        <div
+          className="transition-transform duration-300 ease-out"
+          style={{ transform: `translate(${-mouse.x * 30}px, ${mouse.y * 20}px)` }}
+        >
+          <img src={fog5} alt="fog-5" className="absolute bottom-0 w-full fog-slide" />
+        </div>
       </div>
     </div>
   )
