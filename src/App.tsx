@@ -72,7 +72,7 @@ function App() {
 
     const fadeIn = (target = 1) => {
       audio.volume = 0
-      audio.play()
+      audio.play().catch(() => {})
       let vol = 0
       const step = target / steps
       const id = setInterval(() => {
@@ -89,8 +89,8 @@ function App() {
       })
     })
 
-    fadeIn()
-  }, [])
+    if (audioStarted) fadeIn()
+  }, [audioStarted])
 
   const handleMouseMove = (e: MouseEvent) => {
     const { clientX, clientY } = e
@@ -111,6 +111,7 @@ function App() {
     <div
       className={`relative w-full h-screen overflow-hidden ${loading ? 'blur-xl scale-105' : 'animate-unblur'}`}
       onMouseMove={handleMouseMove}
+      onClick={() => !audioStarted && setAudioStarted(true)}
     >
       <audio ref={audioRef} src={audioSrc} />
       <div className="absolute inset-0 overflow-hidden">
@@ -144,10 +145,8 @@ function App() {
       <img src={cloud2} alt="cloud-2" className="absolute top-[-10%] left-[-100px] z-60 w-[18%] cloud-float" />
 
       {petals.map((p) => (
-        <img
+        <span
           key={p.id}
-          src={petal}
-          alt="petal"
           className="petal"
           style={{
             width: p.size,
@@ -158,7 +157,18 @@ function App() {
             animationDelay: `${p.delay}s`,
             ['--x-drift' as string]: `-${p.xDrift}vw`,
           }}
-        />
+        >
+          <img
+            src={petal}
+            alt="petal"
+            className="petal-inner"
+            style={{
+              width: '100%',
+              height: '100%',
+              animationDuration: `${Math.random() * 2 + 1.5}s`,
+            }}
+          />
+        </span>
       ))}
 
 

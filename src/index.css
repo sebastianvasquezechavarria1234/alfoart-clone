@@ -55,6 +55,15 @@ html, body, #root {
   z-index: 50;
 }
 
+.petal-inner {
+  animation: petal-spin 3s linear infinite;
+}
+
+@keyframes petal-spin {
+  0% { transform: rotateZ(0deg); }
+  100% { transform: rotateZ(360deg); }
+}
+
 @keyframes danceWave {
   0%, 100% { transform: translateX(-50%) translate(0, 0); }
   6% { transform: translateX(-50%) translate(-4%, -8px); }
