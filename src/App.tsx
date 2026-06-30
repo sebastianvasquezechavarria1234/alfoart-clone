@@ -5,6 +5,7 @@ import frontScene from './assets/front-scene.webp'
 import cloud4 from './assets/cloud-4.webp'
 import petal from './assets/petal.webp'
 import buildingInterior from './assets/building-interior.jpg'
+import dancingPeople from './assets/dancing-people.webp'
 
 const petals = Array.from({ length: 60 }, (_, i) => ({
   id: i,
@@ -79,12 +80,17 @@ function App() {
           <img
             src={frontScene}
             alt="front-scene"
-            className="w-full scale-[1.3]"
+            className="w-full scale-[1.3] z-50"
           />
           <img
             src={buildingInterior}
             alt="front-scene"
-            className="w-[50%] absolute z-50 top-[40%] left-1/2 -translate-x-1/2"
+            className="w-[45%] absolute -z-20 top-[48%] left-1/2 -translate-x-1/2"
+          />
+          <img
+            src={dancingPeople}
+            alt="dancing-people"
+            className="w-[35%] absolute -z-10 top-[48%] left-1/2 -translate-x-1/2"
           />
         </div>
       </div>
