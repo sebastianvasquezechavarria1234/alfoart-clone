@@ -71,15 +71,20 @@ function App() {
     }
 
     const fadeIn = (target = 1) => {
+      audio.muted = true
       audio.volume = 0
-      audio.play().catch(() => {})
-      let vol = 0
-      const step = target / steps
-      const id = setInterval(() => {
-        vol = Math.min(target, vol + step)
-        audio.volume = vol
-        if (vol >= target) clearInterval(id)
-      }, interval)
+      audio.play().then(() => {
+        setTimeout(() => {
+          audio.muted = false
+          let vol = 0
+          const step = target / steps
+          const id = setInterval(() => {
+            vol = Math.min(target, vol + step)
+            audio.volume = vol
+            if (vol >= target) clearInterval(id)
+          }, interval)
+        }, 100)
+      }).catch(() => {})
     }
 
     audio.addEventListener('ended', () => {
@@ -89,8 +94,8 @@ function App() {
       })
     })
 
-    if (audioStarted) fadeIn()
-  }, [audioStarted])
+    fadeIn()
+  }, [])
 
   const handleMouseMove = (e: MouseEvent) => {
     const { clientX, clientY } = e
@@ -111,9 +116,8 @@ function App() {
     <div
       className={`relative w-full h-screen overflow-hidden ${loading ? 'blur-xl scale-105' : 'animate-unblur'}`}
       onMouseMove={handleMouseMove}
-      onClick={() => !audioStarted && setAudioStarted(true)}
     >
-      <audio ref={audioRef} src={audioSrc} />
+      <audio ref={audioRef} src={audioSrc} autoPlay />
       <div className="absolute inset-0 overflow-hidden">
         <img
           src={bg1}
