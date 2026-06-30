@@ -12,7 +12,7 @@ import dancingPeople from './assets/dancing-people.webp'
 import audioSrc from './assets/audio.mp3'
 import fogContent2 from './assets/fog-content2.webp'
 import fog5 from './assets/fog-5.webp'
-import moon from './assets/moon.webp'
+import moon from './assets/moon.png'
 
 const petals = Array.from({ length: 60 }, (_, i) => ({
   id: i,
@@ -104,13 +104,13 @@ function App() {
       </div>
 
       <div
-        className="transition-transform duration-300 ease-out absolute inset-0 max-[800px]:w-[200%]"
+        className="transition-transform duration-300 ease-out absolute inset-0 max-[800px]:w-[250%]"
         style={{ transform: `translate(${-mouse.x * 13}px, ${mouse.y * 12}px)` }}
       >
-        <img src={moon} alt="moon" className="absolute top-[-20%] max-[800px]:top-[10%] left-[-30%] w-full " />
+        <img src={moon} alt="moon" className="absolute top-[-20%] max-[800px]:top-[10%] left-[-30%] w-[100px] " />
       </div>
 
-      <img src={cloud4} alt="cloud-4" className="absolute top-[-6%] left-[50%] z-60 w-[23%] cloud-float" style={{ animationDelay: '-3s' }} />
+      <img src={cloud4} alt="cloud-4" className="absolute top-[-6%] max-[800px]:top-[10%] left-[50%] z-60 w-[23%] max-[800px]:w-[68%] cloud-float" style={{ animationDelay: '-3s' }} />
       <img src={cloud3} alt="cloud-3" className="absolute top-[-15%] right-[-2%] z-60 w-[19%] cloud-float" />
       <img src={cloud1} alt="cloud-1" className="absolute top-[6%] max-[800px]:top-[30%] left-[25%] max-[800px]:left-[-20%] z-60 w-[20%] max-[800px]:w-[65%] cloud-float" style={{ animationDelay: '-3s' }} />
       <img src={cloud2} alt="cloud-2" className="absolute top-[-10%] left-[-100px] z-60 w-[18%] cloud-float" />
