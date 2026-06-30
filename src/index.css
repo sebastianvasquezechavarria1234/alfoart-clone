@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
 
 html, body, #root {
   margin: 0;
@@ -8,7 +8,7 @@ html, body, #root {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-    font-family: "Ephesis", cursive;
+   font-family: "Petit Formal Script", cursive;
 }
 
 @keyframes petal-fall {
