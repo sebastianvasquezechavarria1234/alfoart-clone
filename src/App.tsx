@@ -104,7 +104,7 @@ function App() {
       </div>
 
       <div
-        className="transition-transform duration-300 ease-out absolute inset-0"
+        className="transition-transform duration-300 ease-out absolute inset-0 max-[800px]:w-[200%]"
         style={{ transform: `translate(${-mouse.x * 13}px, ${mouse.y * 12}px)` }}
       >
         <img src={moon} alt="moon" className="absolute top-[-20%] max-[800px]:top-[10%] left-[-30%] w-full " />
