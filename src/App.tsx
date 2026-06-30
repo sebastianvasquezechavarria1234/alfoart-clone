@@ -26,7 +26,22 @@ const petals = Array.from({ length: 60 }, (_, i) => ({
 function App() {
   const [mouse, setMouse] = useState({ x: 0, y: 0 })
   const [isSmall, setIsSmall] = useState(window.innerWidth <= 800)
+  const [loading, setLoading] = useState(true)
   const audioRef = useRef<HTMLAudioElement>(null)
+
+  useEffect(() => {
+    const images = [bg1, bg2, frontScene, cloud4, cloud3, cloud1, cloud2, petal, buildingInterior, dancingPeople, fogContent2, fog5, moon]
+    let loaded = 0
+
+    images.forEach((src) => {
+      const img = new Image()
+      img.onload = img.onerror = () => {
+        loaded++
+        if (loaded >= images.length) setLoading(false)
+      }
+      img.src = src
+    })
+  }, [])
 
   useEffect(() => {
     const handleResize = () => setIsSmall(window.innerWidth <= 800)
@@ -174,7 +189,7 @@ function App() {
         </div>
       </div>
 
-      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-4 z-50 font-['Imperial_Script'] text-2xl">
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-4 z-50 font-['Imperial_Script'] text-2xl max-[800px]:text-base max-[800px]:whitespace-nowrap">
         <a href="https://sebas-dev.vercel.app/" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full border border-white/20 hover:bg-white/20 transition-colors">
           Creado por Sebastian Vasquez
         </a>
