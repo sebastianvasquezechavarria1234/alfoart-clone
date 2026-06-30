@@ -70,3 +70,12 @@ html, body, #root {
 .fog-slide-reverse {
   animation: fogSlide 15s ease-in-out infinite reverse;
 }
+
+@keyframes unblur {
+  0% { filter: blur(20px); opacity: 0; }
+  100% { filter: blur(0); opacity: 1; }
+}
+
+.animate-unblur {
+  animation: unblur 1.5s ease-out forwards;
+}
