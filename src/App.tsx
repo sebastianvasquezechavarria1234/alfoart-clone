@@ -104,10 +104,10 @@ function App() {
       </div>
 
       <div
-        className="transition-transform duration-300 ease-out"
+        className="transition-transform duration-300 ease-out absolute inset-0"
         style={{ transform: `translate(${-mouse.x * 3}px, ${mouse.y * 2}px)` }}
       >
-        <img src={moon} alt="moon" className="absolute top-[-22%] left-[-30%] w-full " />
+        <img src={moon} alt="moon" className="absolute top-[-20%] left-[-30%] w-full " />
       </div>
 
       <img src={cloud4} alt="cloud-4" className="absolute top-[-6%] left-[50%] z-60 w-[23%] cloud-float" style={{ animationDelay: '-3s' }} />
@@ -160,7 +160,7 @@ function App() {
       <div className="relative w-full h-screen overflow-hidden">
         <div
           className="w-full h-full transition-transform duration-300 ease-out"
-          style={{ transform: `translate(${-mouse.x * 100}px, ${mouse.y * 100}px)` }}
+          style={{ transform: `translate(${-mouse.x * 60}px, ${mouse.y * 60}px)` }}
         >
           <img src={fogContent2} alt="fog-content2" className="absolute bottom-[-10%] w-full fog-slide-reverse" />
           <img src={fog5} alt="fog-5" className="absolute bottom-0 w-full fog-slide" />
