@@ -112,7 +112,7 @@ function App() {
 
       <img src={cloud4} alt="cloud-4" className="absolute top-[-6%] left-[50%] z-60 w-[23%] cloud-float" style={{ animationDelay: '-3s' }} />
       <img src={cloud3} alt="cloud-3" className="absolute top-[-15%] right-[-2%] z-60 w-[19%] cloud-float" />
-      <img src={cloud1} alt="cloud-1" className="absolute top-[6%] max-[800px]:top-[40%] left-[25%] max-[800px]:left-[-20%] z-60 w-[20%] max-[800px]:w-[60%] cloud-float" style={{ animationDelay: '-3s' }} />
+      <img src={cloud1} alt="cloud-1" className="absolute top-[6%] max-[800px]:top-[30%] left-[25%] max-[800px]:left-[-20%] z-60 w-[20%] max-[800px]:w-[65%] cloud-float" style={{ animationDelay: '-3s' }} />
       <img src={cloud2} alt="cloud-2" className="absolute top-[-10%] left-[-100px] z-60 w-[18%] cloud-float" />
 
       {petals.map((p) => (
