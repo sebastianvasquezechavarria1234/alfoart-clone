@@ -73,18 +73,18 @@ function App() {
 
       <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 w-[190%]">
         <div
-          className="transition-transform duration-300 ease-out"
+          className="transition-transform duration-300 ease-out bg-red-600"
           style={{ transform: `translate(${-mouse.x * 80}px, ${mouse.y * 40}px)` }}
         >
           <img
             src={frontScene}
             alt="front-scene"
-            className="w-full"
+            className="w-full scale-[1.3]"
           />
           <img
             src={buildingInterior}
             alt="front-scene"
-            className="w-[400px] absolute z-50 bottom-0 left-1/2 -translate-x-1/2"
+            className="w-[50%] absolute z-50 top-[40%] left-1/2 -translate-x-1/2"
           />
         </div>
       </div>
