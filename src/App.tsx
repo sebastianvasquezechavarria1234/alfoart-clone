@@ -10,6 +10,8 @@ import petal from './assets/petal.webp'
 import buildingInterior from './assets/building-interior.jpg'
 import dancingPeople from './assets/dancing-people.webp'
 import audioSrc from './assets/audio.mp3'
+import fogContent2 from './assets/fog-content2.webp'
+import fog5 from './assets/fog-5.webp'
 
 const petals = Array.from({ length: 60 }, (_, i) => ({
   id: i,
@@ -145,6 +147,14 @@ function App() {
             className="w-[30%] absolute -z-10 top-[56%] left-1/2 dancing"
           />
         </div>
+      </div>
+
+      <div className="relative w-full h-screen">
+        <img src={fogContent2} alt="fog-content2" className="absolute bottom-0 w-full" />
+      </div>
+
+      <div className="relative w-full h-screen">
+        <img src={fog5} alt="fog-5" className="absolute bottom-0 w-full" />
       </div>
     </div>
   )
