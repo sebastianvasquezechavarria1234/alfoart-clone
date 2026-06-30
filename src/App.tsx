@@ -94,7 +94,7 @@ function App() {
         />
       </div>
 
-      <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 w-[190%]">
+      <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 w-[190%] max-[800px]:w-[250%]">
         <img
           src={bg2}
           alt="background-2"
@@ -134,7 +134,7 @@ function App() {
       ))}
 
 
-      <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 w-[190%] max-[800px]:w-[300%] ">
+      <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 w-[190%] max-[800px]:w-[200%] ">
         <div
           className="transition-transform duration-300 ease-out "
           style={{ transform: `translate(${-mouse.x * 80}px, ${mouse.y * 45}px)` }}
@@ -157,7 +157,7 @@ function App() {
         </div>
       </div>
 
-      <div className="relative w-full h-screen overflow-hidden">
+      <div className="relative w-full max-[800px]:w-[250%] h-screen overflow-hidden">
         <div
           className="w-full h-full transition-transform duration-300 ease-out"
           style={{ transform: `translate(${-mouse.x * 60}px, ${mouse.y * 60}px)` }}
