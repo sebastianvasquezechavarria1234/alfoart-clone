@@ -12,6 +12,7 @@ import dancingPeople from './assets/dancing-people.webp'
 import audioSrc from './assets/audio.mp3'
 import fogContent2 from './assets/fog-content2.webp'
 import fog5 from './assets/fog-5.webp'
+import moon from './assets/moon.webp'
 
 const petals = Array.from({ length: 60 }, (_, i) => ({
   id: i,
@@ -101,6 +102,8 @@ function App() {
           style={{ transform: `scale(1.2) translate(${-mouse.x * 50}px, ${mouse.y * 30}px)` }}
         />
       </div>
+
+      <img src={moon} alt="moon" className="absolute top-[-22%] left-[-30%] w-full " />
 
       <img src={cloud4} alt="cloud-4" className="absolute top-[-5%] left-[50%] z-60 w-[23%] cloud-float" style={{ animationDelay: '-3s' }} />
       <img src={cloud3} alt="cloud-3" className="absolute top-[-15%] right-[-2%] z-60 w-[19%] cloud-float" />
