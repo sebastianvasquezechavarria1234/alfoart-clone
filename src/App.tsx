@@ -107,7 +107,7 @@ function App() {
         className="transition-transform duration-300 ease-out absolute inset-0"
         style={{ transform: `translate(${-mouse.x * 13}px, ${mouse.y * 12}px)` }}
       >
-        <img src={moon} alt="moon" className="absolute top-[-20%] left-[-30%] w-full " />
+        <img src={moon} alt="moon" className="absolute top-[-20%] max-[800px]:top-[10%] left-[-30%] w-full " />
       </div>
 
       <img src={cloud4} alt="cloud-4" className="absolute top-[-6%] left-[50%] z-60 w-[23%] cloud-float" style={{ animationDelay: '-3s' }} />
@@ -142,7 +142,7 @@ function App() {
           <img
             src={frontScene}
             alt="front-scene"
-            className="w-full scale-[1.3] z-50"
+            className="w-full scale-[1.3] max-[800px]:scale-[1.8] z-50"
           />
           <img
             src={buildingInterior}
