@@ -3,6 +3,9 @@ import bg1 from './assets/background-1.jpg'
 import bg2 from './assets/background-2.webp'
 import frontScene from './assets/front-scene.webp'
 import cloud4 from './assets/cloud-4.webp'
+import cloud3 from './assets/cloud-3.webp'
+import cloud1 from './assets/cloud-1.webp'
+import cloud2 from './assets/cloud-2.webp'
 import petal from './assets/petal.webp'
 import buildingInterior from './assets/building-interior.jpg'
 import dancingPeople from './assets/dancing-people.webp'
@@ -97,7 +100,10 @@ function App() {
         />
       </div>
 
-      <img src={cloud4} alt="cloud-4" className="absolute top-0 left-0 z-60 w-[400px]" />
+      <img src={cloud4} alt="cloud-4" className="absolute top-[-40px] left-[55%] z-60 w-[25%]" />
+      <img src={cloud3} alt="cloud-3" className="absolute top-[-40px] right-[10%] z-60 w-[25%]" />
+      <img src={cloud1} alt="cloud-1" className="absolute top-[200px] left-[25%] z-60 w-[25%]" />
+      <img src={cloud2} alt="cloud-2" className="absolute top-[-30px] left-[-100px] z-60 w-[25%]" />
 
       {petals.map((p) => (
         <img
