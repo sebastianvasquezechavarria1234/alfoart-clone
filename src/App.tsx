@@ -150,11 +150,11 @@ function App() {
       </div>
 
       <div className="relative w-full h-screen overflow-hidden">
-        <img src={fogContent2} alt="fog-content2" className="absolute bottom-0 w-full scale-[1.4]" />
+        <img src={fogContent2} alt="fog-content2" className="absolute bottom-0 w-full fog-slide" style={{ animationDirection: 'reverse' }} />
       </div>
 
       <div className="relative w-full h-screen overflow-hidden">
-        <img src={fog5} alt="fog-5" className="absolute bottom-0 w-full scale-[1.4]" />
+        <img src={fog5} alt="fog-5" className="absolute bottom-0 w-full fog-slide" />
       </div>
     </div>
   )
