@@ -160,7 +160,7 @@ function App() {
       <div className="relative w-full h-screen overflow-hidden">
         <div
           className="w-full h-full transition-transform duration-300 ease-out"
-          style={{ transform: `translate(${-mouse.x * 40}px, ${mouse.y * 25}px)` }}
+          style={{ transform: `translate(${-mouse.x * 165}px, ${mouse.y * 150}px)` }}
         >
           <img src={fogContent2} alt="fog-content2" className="absolute bottom-[-10%] w-full fog-slide-reverse" />
           <img src={fog5} alt="fog-5" className="absolute bottom-0 w-full fog-slide" />
