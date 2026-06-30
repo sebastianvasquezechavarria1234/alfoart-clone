@@ -134,7 +134,7 @@ function App() {
       ))}
 
 
-      <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 w-[190%] ">
+      <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 w-[190%] max-[800px]:w-[300%] ">
         <div
           className="transition-transform duration-300 ease-out "
           style={{ transform: `translate(${-mouse.x * 80}px, ${mouse.y * 45}px)` }}
