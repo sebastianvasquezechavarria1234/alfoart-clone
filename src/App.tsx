@@ -52,7 +52,11 @@ function App() {
 
   useEffect(() => {
     const audio = audioRef.current
-    if (!audio || !musicOn) return
+    if (!audio) return
+    if (!musicOn) {
+      audio.pause()
+      return
+    }
 
     audio.volume = 0
     audio.play().then(() => {
