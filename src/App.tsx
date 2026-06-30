@@ -154,18 +154,10 @@ function App() {
 
       <div className="relative w-full h-screen overflow-hidden">
         <div
-          className="transition-transform duration-300 ease-out"
+          className="w-full h-full transition-transform duration-300 ease-out"
           style={{ transform: `translate(${-mouse.x * 30}px, ${mouse.y * 20}px)` }}
         >
           <img src={fogContent2} alt="fog-content2" className="absolute bottom-[-10%] w-full fog-slide-reverse" />
-        </div>
-      </div>
-
-      <div className="relative w-full h-screen overflow-hidden">
-        <div
-          className="transition-transform duration-300 ease-out"
-          style={{ transform: `translate(${-mouse.x * 30}px, ${mouse.y * 20}px)` }}
-        >
           <img src={fog5} alt="fog-5" className="absolute bottom-0 w-full fog-slide" />
         </div>
       </div>
