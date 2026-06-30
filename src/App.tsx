@@ -100,10 +100,10 @@ function App() {
         />
       </div>
 
-      <img src={cloud4} alt="cloud-4" className="absolute top-[-40px] left-[55%] z-60 w-[25%]" />
-      <img src={cloud3} alt="cloud-3" className="absolute top-[-40px] right-[10%] z-60 w-[25%]" />
-      <img src={cloud1} alt="cloud-1" className="absolute top-[200px] left-[25%] z-60 w-[25%]" />
-      <img src={cloud2} alt="cloud-2" className="absolute top-[-30px] left-[-100px] z-60 w-[25%]" />
+      <img src={cloud4} alt="cloud-4" className="absolute top-[-5%] left-[50%] z-60 w-[25%]" />
+      <img src={cloud3} alt="cloud-3" className="absolute top-[-140px] right-[-2%] z-60 w-[21%]" />
+      <img src={cloud1} alt="cloud-1" className="absolute top-[10%] left-[25%] z-60 w-[22%]" />
+      <img src={cloud2} alt="cloud-2" className="absolute top-[-120px] left-[-100px] z-60 w-[20%]" />
 
       {petals.map((p) => (
         <img
