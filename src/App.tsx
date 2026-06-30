@@ -53,48 +53,36 @@ function App() {
     const audio = audioRef.current
     if (!audio) return
 
-    const fadeDuration = 2000
-    const steps = 20
-    const interval = fadeDuration / steps
+    audio.volume = 0
 
-    const fadeOut = (cb?: () => void) => {
-      let vol = audio.volume
-      const step = vol / steps
-      const id = setInterval(() => {
-        vol = Math.max(0, vol - step)
-        audio.volume = vol
-        if (vol <= 0) {
-          clearInterval(id)
-          cb?.()
-        }
-      }, interval)
-    }
-
-    const fadeIn = (target = 1) => {
-      audio.muted = true
+    const fadeIn = () => {
+      audio.play().catch(() => {})
       audio.volume = 0
-      audio.play().then(() => {
-        setTimeout(() => {
-          audio.muted = false
-          let vol = 0
-          const step = target / steps
-          const id = setInterval(() => {
-            vol = Math.min(target, vol + step)
-            audio.volume = vol
-            if (vol >= target) clearInterval(id)
-          }, interval)
-        }, 100)
-      }).catch(() => {})
+      const id = setInterval(() => {
+        audio.volume = Math.min(1, audio.volume + 0.05)
+        if (audio.volume >= 1) clearInterval(id)
+      }, 100)
     }
+
+    const startOnInteraction = () => {
+      fadeIn()
+      window.removeEventListener('mousemove', startOnInteraction)
+      window.removeEventListener('click', startOnInteraction)
+    }
+
+    window.addEventListener('mousemove', startOnInteraction)
+    window.addEventListener('click', startOnInteraction)
 
     audio.addEventListener('ended', () => {
-      fadeOut(() => {
-        audio.currentTime = 0
-        fadeIn()
-      })
+      audio.volume = 0
+      audio.currentTime = 0
+      fadeIn()
     })
 
-    fadeIn()
+    return () => {
+      window.removeEventListener('mousemove', startOnInteraction)
+      window.removeEventListener('click', startOnInteraction)
+    }
   }, [])
 
   const handleMouseMove = (e: MouseEvent) => {
@@ -117,7 +105,7 @@ function App() {
       className={`relative w-full h-screen overflow-hidden ${loading ? 'blur-xl scale-105' : 'animate-unblur'}`}
       onMouseMove={handleMouseMove}
     >
-      <audio ref={audioRef} src={audioSrc} autoPlay />
+      <audio ref={audioRef} src={audioSrc} autoPlay loop />
       <div className="absolute inset-0 overflow-hidden">
         <img
           src={bg1}
