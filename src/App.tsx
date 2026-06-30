@@ -90,7 +90,7 @@ function App() {
           <img
             src={dancingPeople}
             alt="dancing-people"
-            className="w-[35%] absolute -z-10 top-[48%] left-1/2 -translate-x-1/2"
+            className="w-[30%] absolute -z-10 top-[56%] left-1/2 -translate-x-1/2"
           />
         </div>
       </div>
