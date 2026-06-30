@@ -27,6 +27,7 @@ function App() {
   const [mouse, setMouse] = useState({ x: 0, y: 0 })
   const [isSmall, setIsSmall] = useState(window.innerWidth <= 800)
   const [loading, setLoading] = useState(true)
+  const [musicOn, setMusicOn] = useState(false)
   const audioRef = useRef<HTMLAudioElement>(null)
 
   useEffect(() => {
@@ -51,39 +52,34 @@ function App() {
 
   useEffect(() => {
     const audio = audioRef.current
-    if (!audio) return
+    if (!audio || !musicOn) return
 
     audio.volume = 0
-
-    const fadeIn = () => {
-      audio.play().catch(() => {})
-      audio.volume = 0
+    audio.play().then(() => {
+      let vol = 0
       const id = setInterval(() => {
-        audio.volume = Math.min(1, audio.volume + 0.05)
-        if (audio.volume >= 1) clearInterval(id)
-      }, 100)
-    }
+        vol = Math.min(1, vol + 0.02)
+        audio.volume = vol
+        if (vol >= 1) clearInterval(id)
+      }, 60)
+    }).catch(() => {})
 
-    const startOnInteraction = () => {
-      fadeIn()
-      window.removeEventListener('mousemove', startOnInteraction)
-      window.removeEventListener('click', startOnInteraction)
-    }
-
-    window.addEventListener('mousemove', startOnInteraction)
-    window.addEventListener('click', startOnInteraction)
-
-    audio.addEventListener('ended', () => {
-      audio.volume = 0
+    const handleEnded = () => {
       audio.currentTime = 0
-      fadeIn()
-    })
-
-    return () => {
-      window.removeEventListener('mousemove', startOnInteraction)
-      window.removeEventListener('click', startOnInteraction)
+      audio.volume = 0
+      audio.play().then(() => {
+        let vol = 0
+        const id = setInterval(() => {
+          vol = Math.min(1, vol + 0.02)
+          audio.volume = vol
+          if (vol >= 1) clearInterval(id)
+        }, 60)
+      }).catch(() => {})
     }
-  }, [])
+
+    audio.addEventListener('ended', handleEnded)
+    return () => audio.removeEventListener('ended', handleEnded)
+  }, [musicOn])
 
   const handleMouseMove = (e: MouseEvent) => {
     const { clientX, clientY } = e
@@ -105,7 +101,7 @@ function App() {
       className={`relative w-full h-screen overflow-hidden ${loading ? 'blur-xl scale-105' : 'animate-unblur'}`}
       onMouseMove={handleMouseMove}
     >
-      <audio ref={audioRef} src={audioSrc} autoPlay loop />
+      <audio ref={audioRef} src={audioSrc} preload="auto" />
       <div className="absolute inset-0 overflow-hidden">
         <img
           src={bg1}
@@ -197,13 +193,18 @@ function App() {
         </div>
       </div>
 
-      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-4 z-50 font-['Imperial_Script'] text-2xl max-[800px]:text-base max-[800px]:whitespace-nowrap">
-        <a href="https://sebas-dev.vercel.app/" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full border border-white/20 hover:bg-white/20 transition-colors">
-          Creado por Sebastian Vasquez
-        </a>
-        <a href="https://github.com/sebastianvasquezechavarria1234/alfoart-clone" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full border border-white/20 hover:bg-white/20 transition-colors">
-          Codigo fuente
-        </a>
+      <div className="fixed bottom-4 left-0 right-0 flex justify-between items-center px-6 z-50 font-['Imperial_Script'] text-2xl max-[800px]:text-base max-[800px]:whitespace-nowrap">
+        <div className="flex gap-4">
+          <a href="https://sebas-dev.vercel.app/" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full border border-white/20 hover:bg-white/20 transition-colors">
+            Creado por Sebastian Vasquez
+          </a>
+          <a href="https://github.com/sebastianvasquezechavarria1234/alfoart-clone" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full border border-white/20 hover:bg-white/20 transition-colors">
+            Codigo fuente
+          </a>
+        </div>
+        <button onClick={toggleMusic} className="px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full border border-white/20 hover:bg-white/20 transition-colors cursor-pointer">
+          {musicOn ? 'Pausar musica' : 'Activar musica'}
+        </button>
       </div>
     </div>
     </>
