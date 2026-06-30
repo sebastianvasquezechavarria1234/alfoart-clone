@@ -24,3 +24,24 @@ html, body, #root {
   animation-iteration-count: infinite;
   z-index: 50;
 }
+
+@keyframes danceWave {
+  0%, 100% { transform: translateX(-50%) translate(0, 0); }
+  6% { transform: translateX(-50%) translate(-4%, -8px); }
+  12% { transform: translateX(-50%) translate(-4%, 0); }
+  18% { transform: translateX(-50%) translate(-8%, -8px); }
+  24% { transform: translateX(-50%) translate(-8%, 0); }
+  30% { transform: translateX(-50%) translate(-12%, -8px); }
+  36% { transform: translateX(-50%) translate(-12%, 0); }
+  50% { transform: translateX(-50%) translate(0, 0); }
+  56% { transform: translateX(-50%) translate(4%, -8px); }
+  62% { transform: translateX(-50%) translate(4%, 0); }
+  68% { transform: translateX(-50%) translate(8%, -8px); }
+  74% { transform: translateX(-50%) translate(8%, 0); }
+  80% { transform: translateX(-50%) translate(12%, -8px); }
+  86% { transform: translateX(-50%) translate(12%, 0); }
+}
+
+.dancing {
+  animation: danceWave 10s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
